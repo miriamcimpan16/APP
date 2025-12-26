@@ -2,40 +2,111 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@drawable/plant_background">
+
+    <!-- Overlay pentru lizibilitate -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Icon plantă -->
+
+    <!-- Titlu -->
+
+    <ImageView
+        android:id="@+id/plantIcon"
+        android:layout_width="282dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="25dp"
+        android:contentDescription="Plant icon"
+        app:layout_constraintBottom_toTopOf="@id/titleText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SkinCare Assistant"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="Plant Care Assistant"
+        android:textSize="29sp"
+        android:textStyle="normal"
+        android:fontFamily="@font/font"
+        android:letterSpacing="0.05"
+        android:textColor="#2E7D32"
+        app:layout_constraintTop_toBottomOf="@id/plantIcon"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/captureButton"
-        android:layout_width="0dp"
+
+    <!-- Subtitlu -->
+    <TextView
+        android:id="@+id/subtitleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start skin analysis"
+        android:text="A gentle way to understand what your plant needs"
+        android:textSize="14sp"
+        android:fontFamily="@font/font"
+        android:letterSpacing="0.03"
+        android:textColor="#6B6B6B"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
-        android:id="@+id/historyButton"
+
+    <!-- Buton principal -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/captureButton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Istoric poze"
+        android:layout_height="64dp"
+        android:text="Let's start your analysis"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/font"
+        app:iconSize="26dp"
+        app:iconPadding="14dp"
+        app:iconGravity="textStart"
+        android:backgroundTint="#8FBC8F"
+        android:textColor="@android:color/white"
+        app:cornerRadius="28dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintTop_toBottomOf="@id/subtitleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Buton secundar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/historyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:text="My plants"
+        android:textSize="13sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/font"
+        android:letterSpacing="0.04"
+        android:layout_marginTop="18dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#81C784"
+        android:textColor="#4CAF50"
+        android:backgroundTint="@android:color/transparent"
+        app:cornerRadius="22dp"
         app:layout_constraintTop_toBottomOf="@id/captureButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,46 +4,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="24dp">
+    android:padding="24dp"
+    android:background="@drawable/plant_background">
 
+    <!-- Overlay discret pentru lizibilitate -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80FFFFFF"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Text mic, calm -->
     <TextView
         android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Alege o opțiune"
-        android:textSize="22sp"
+        android:text="How would you like to add a plant?"
+        android:textSize="16sp"
+        android:textColor="#4E4E4E"
+        android:fontFamily="@font/font"
+        android:letterSpacing="0.03"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/cameraButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Fă o poză"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="32dp"/>
 
+    <!-- Buton principal -->
+    <Button
+        android:id="@+id/cameraButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:text="Take a photo"
+        android:textSize="15sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/font"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- Acțiune secundară -->
     <Button
         android:id="@+id/galleryButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Încarcă din galerie"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Choose from gallery"
+        android:textSize="14sp"
+        android:textAllCaps="false"
+        android:fontFamily="@font/font"
+        android:textColor="#4CAF50"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/cameraButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
-    <Button
+
+    <!-- Link discret -->
+    <TextView
         android:id="@+id/historyButton"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="History"
+        android:text="My plants"
+        android:textSize="13sp"
+        android:textColor="#6B6B6B"
+        android:fontFamily="@font/font"
+        android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@id/galleryButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

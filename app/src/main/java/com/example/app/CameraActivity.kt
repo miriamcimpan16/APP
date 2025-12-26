@@ -1,6 +1,7 @@
 package com.example.app
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.Button
@@ -15,6 +16,10 @@ import androidx.camera.view.PreviewView
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import java.io.File
+import android.content.IntentSender
+
+
+
 
 class CameraActivity : AppCompatActivity() {
 
@@ -117,8 +122,14 @@ class CameraActivity : AppCompatActivity() {
                     outputFileResults: ImageCapture.OutputFileResults
                 ) {
                     ImageStorage.images.add(photoFile.absolutePath)
-                    finish()
+                    val intent = Intent(this@CameraActivity, ResultActivity::class.java)
+                    intent.putExtra("image_path", photoFile.absolutePath)
+                    startActivity(intent)
+
+                    // opțional: închizi camera
+                    //finish()
                 }
+
 
                 override fun onError(exception: ImageCaptureException) {
                     Toast.makeText(

@@ -3,6 +3,7 @@ package com.example.app
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class ChooseImageActivity : AppCompatActivity() {
@@ -19,7 +20,7 @@ class ChooseImageActivity : AppCompatActivity() {
             startActivity(Intent(this, GalleryActivity::class.java))
         }
 
-        findViewById<Button>(R.id.historyButton).setOnClickListener {
+        findViewById<TextView>(R.id.historyButton).setOnClickListener {
             startActivity(Intent(this, HistoryActivity::class.java))
         }
     }
